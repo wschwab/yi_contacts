@@ -6,7 +6,7 @@ router.post('/', contactCtrl.create)
 
 router.get('/:id', contactCtrl.getOne)
 
-router.get('/', contactCtrl.getAll) // get all
+router.get('/', contactCtrl.getAll)
 
 router.put('/:id', contactCtrl.updateOne)
 

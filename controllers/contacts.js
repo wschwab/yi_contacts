@@ -15,7 +15,7 @@ async function create(req, res, next) {
 
 async function getOne(req, res, next) {
     try {
-        const getOneContact = await contactsRepo.findById(req.body)
+        const getOneContact = await contactsRepo.getOne(req.body)
     } catch (err) {
         console.log(err)
         res.status(500).json({error: "Get request failed"})
@@ -26,12 +26,13 @@ async function getOne(req, res, next) {
 
 async function getAll(req, res, next) {
     try {
-        const getAllContacts = await contactsRepo.find(req.body)
+        console.log(contactsRepo.getAll)
+        const getAllContacts = await contactsRepo.getAll(req.body)
     } catch (err) {
-
-    } finally {
         console.log(err)
         res.status(500).json({error: "Get request failed"})
+    } finally {
+
     }
 }
 
