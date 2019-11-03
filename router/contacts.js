@@ -4,9 +4,9 @@ const contactCtrl = require('../controllers/contacts')
 
 router.post('/', contactCtrl.create)
 
-router.get('/:id', contactCtrl.findById)
+router.get('/:id', contactCtrl.getOne)
 
-router.get('/', contractCtrl.find) // get all
+router.get('/', contactCtrl.getAll) // get all
 
 router.put('/:id', contactCtrl.updateOne)
 
