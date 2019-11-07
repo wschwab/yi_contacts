@@ -16,6 +16,7 @@ async function create(req, res, next) {
 async function getOne(req, res, next) {
     try {
         const getOneContact = await contactsRepo.getOne(req.body)
+        res.status(200).json(getOneContact)
     } catch (err) {
         console.log(err)
         res.status(500).json({error: "Get request failed"})
@@ -26,8 +27,8 @@ async function getOne(req, res, next) {
 
 async function getAll(req, res, next) {
     try {
-        console.log(contactsRepo.getAll)
         const getAllContacts = await contactsRepo.getAll(req.body)
+        res.status(200).json(getAllContacts)
     } catch (err) {
         console.log(err)
         res.status(500).json({error: "Get request failed"})
@@ -39,6 +40,7 @@ async function getAll(req, res, next) {
 async function updateOne(req, res, next) {
     try {
         const updateContact = await contactsRepo.updateOne(req.body)
+        res.status(200).json(updateContact)
     } catch (err) {
         console.log(err)
         res.status(500).json({error: "Put request failed"})
@@ -50,6 +52,7 @@ async function updateOne(req, res, next) {
 async function deleteOne(req, res, next) {
     try {
         const deleteContact = await contactsRepo.deleteOne(req.body)
+        res.status(500).json(deleteContact)
     } catch (err) {
         console.log(err)
         res.status(500).json({error: "Delete request failed"})
